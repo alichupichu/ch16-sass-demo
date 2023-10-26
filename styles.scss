@@ -1,0 +1,66 @@
+@mixin spacing {
+  padding: 30px;
+  margin: 10px;
+  margin-bottom: 15px;
+}
+@mixin sizes {
+  font-size: 2rem;
+  height: 50px;
+  width: 100px;
+}
+
+@mixin spacingAndSizes {
+  @include spacing;
+  @include sizes;
+}
+@mixin sizing($value, $value2) {
+  padding: $value;
+  margin: $value2;
+}
+
+div {
+  @include spacing(padding, 20px);
+}
+div {
+  @include spacing(margin, 50px);
+}
+
+@mixin demo($url) {
+  background-image: url("#{$url}");
+}
+.img {
+  @include demo("hello.png");
+}
+
+p {
+  @include spacingAndSizing;
+  color: purple;
+}
+.important {
+  @include spacing;
+}
+h2 {
+  @include sizing(20px, 30px);
+}
+
+h1 {
+  @include sizing(90px, 10px);
+}
+@mixin flex($gap) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+.flex-container {
+  @include flex(10px);
+}
+
+%importante {
+  background-color: magenta;
+  color: white;
+}
+.message {
+  @extend %important;
+}

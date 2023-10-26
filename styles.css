@@ -1,0 +1,11 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.message {
+  background-color: magenta;
+  color: white;
+}/*# sourceMappingURL=styles.css.map */
